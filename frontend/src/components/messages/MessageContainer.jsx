@@ -12,7 +12,7 @@ function MessageContainer() {
   }, [setSelectedConversation]);
 
   return (
-    <div className="flex flex-col md:min-w-[450px] ">
+    <div className="flex flex-col w-full">
       {!selectedConversation ? (
         <NoChatSelected />
       ) : (
@@ -22,7 +22,7 @@ function MessageContainer() {
             <div className="w-10 rounded-full mr-2">
               <img src={selectedConversation.profilePicture} alt={selectedConversation.fullname} />
             </div>
-            <span className="text-gray-900 font-bold">{selectedConversation.fullname}</span>
+            <span className=" font-bold text-gray-200">{selectedConversation.fullname}</span>
           </div>
 
           <Messages />

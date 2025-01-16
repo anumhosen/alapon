@@ -15,12 +15,12 @@ function MessageInput() {
       <div className="w-full relative">
         <input
           type="text"
-          className="border text-sm rounded-lg block w-full p-2.5 bg-gray-600 text-white"
+          className="border text-sm rounded-full block w-full py-2.5 px-4 bg-gray-600 text-white focus:outline-none"
           placeholder="Send a message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <button type="submit" className="absolute inset-y-0 end-0 flex items-center pe-3">
+        <button type="submit" className="absolute inset-y-0 end-0 flex items-center pe-4">
           {loading ? <div className="loading loading-spinner"></div> : <BsSend />}
         </button>
       </div>

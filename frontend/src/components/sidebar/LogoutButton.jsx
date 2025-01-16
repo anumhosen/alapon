@@ -13,7 +13,7 @@ const LogoutButton = () => {
       ) : (
         <span className="loading loading-spinner"></span>
       )}
-      <span className="text-gray-300 ml-4">{authUser.username}</span>
+      <span className="text-gray-300 sm:ml-4 ml-1">{authUser.username}</span>
     </div>
   );
 };
