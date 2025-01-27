@@ -6,8 +6,8 @@ function useSignup() {
   const [loading, setLoading] = useState(false);
   const { setAuthUser } = useAuthContext();
 
-  const signup = async ({ fullname, username, password, confirmPassword, gender }) => {
-    const success = handleInputErrors({ fullname, username, password, confirmPassword, gender });
+  const signup = async ({ fullname, username, email, password, confirmPassword, gender }) => {
+    const success = handleInputErrors({ fullname, username, email, password, confirmPassword, gender });
     if (!success) return;
 
     setLoading(true);
@@ -15,7 +15,7 @@ function useSignup() {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullname, username, password, confirmPassword, gender }),
+        body: JSON.stringify({ fullname, username, email, password, confirmPassword, gender }),
       });
 
       const data = await res.json();
@@ -38,8 +38,8 @@ function useSignup() {
 
 export default useSignup;
 
-function handleInputErrors({ fullname, username, password, confirmPassword, gender }) {
-  if (!fullname || !username || !password || !confirmPassword || !gender) {
+function handleInputErrors({ fullname, username, email, password, confirmPassword, gender }) {
+  if (!fullname || !username || !email || !password || !confirmPassword || !gender) {
     toast.error("Please fill all the fields");
     return false;
   }

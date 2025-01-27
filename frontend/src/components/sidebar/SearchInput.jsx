@@ -25,17 +25,17 @@ function SearchInput() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center sm:pr-4">
+    <form onSubmit={handleSubmit} className="flex items-center">
       <input
         type="text"
         placeholder="Search..."
-        className="sm:py-1.5 sm:pl-4 rounded-none rounded-l-full w-full pl-2 focus:outline-none"
+        className="py-2 px-4 rounded-none rounded-l-full w-full focus:outline-none bg-gray-800 bg-opacity-60 text-gray-300"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <button
         type="submit"
-        className="sm:py-1.5 rounded-none rounded-r-full bg-sky-500 text-white"
+        className="py-2 px-1 rounded-none rounded-r-full bg-sky-500 text-white bg-opacity-80"
       >
         <IoSearchSharp className="w-8 h-6 outline-none p-1" />
       </button>

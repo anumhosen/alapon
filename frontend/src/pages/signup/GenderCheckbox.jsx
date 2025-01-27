@@ -3,7 +3,7 @@ function GenderCheckbox({ onCheckboxChange, selectedGender }) {
     <div className="flex">
       <div>
         <label className="label p-2">
-          <span className="text-base label-text">Gender :</span>
+          <span className="text-base label-text text-gray-300">Gender :</span>
         </label>
       </div>
       <div className="form-control">
@@ -12,10 +12,10 @@ function GenderCheckbox({ onCheckboxChange, selectedGender }) {
             selectedGender === "male" ? "selected" : ""
           }`}
         >
-          <span className="label-text">Male</span>
+          <span className="label-text text-gray-300">Male</span>
           <input
             type="checkbox"
-            className="checkbox border-slate-900"
+            className="checkbox border-gray-300"
             checked={selectedGender === "male"}
             onChange={() => onCheckboxChange("male")}
           />
@@ -27,10 +27,10 @@ function GenderCheckbox({ onCheckboxChange, selectedGender }) {
             selectedGender === "female" ? "selected" : ""
           }`}
         >
-          <span className="label-text">Female</span>
+          <span className="label-text text-gray-300">Female</span>
           <input
             type="checkbox"
-            className="checkbox border-slate-900"
+            className="checkbox border-gray-300"
             checked={selectedGender === "female"}
             onChange={() => onCheckboxChange("female")}
           />

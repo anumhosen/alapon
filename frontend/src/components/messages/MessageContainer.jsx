@@ -4,6 +4,7 @@ import { TiMessages } from "react-icons/ti";
 import useConversation from "../../zustand/useConversation.js";
 import { useEffect } from "react";
 import { useAuthContext } from "../../context/AuthContext.jsx";
+import { FaArrowLeft } from "react-icons/fa";
 function MessageContainer() {
   const { selectedConversation, setSelectedConversation } = useConversation();
 
@@ -12,17 +13,24 @@ function MessageContainer() {
   }, [setSelectedConversation]);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className={`w-full sm:w-2/3 ${selectedConversation ? "flex" : "hidden"} sm:flex flex-col`}>
       {!selectedConversation ? (
         <NoChatSelected />
       ) : (
         <>
           {/* Header */}
-          <div className="flex items-center bg-slate-500 px-4 py-2 mb-2">
-            <div className="w-10 rounded-full mr-2">
+
+          <div className="flex items-center px-4 py-2 mb-2">
+            <button
+              onClick={() => setSelectedConversation(null)}
+              className="sm:hidden font-bold text-gray-200 mr-4"
+            >
+              <FaArrowLeft />
+            </button>
+            <div className="w-8 sm:w-10 rounded-full mr-2">
               <img src={selectedConversation.profilePicture} alt={selectedConversation.fullname} />
             </div>
-            <span className=" font-bold text-gray-200">{selectedConversation.fullname}</span>
+            <span className="font-bold text-gray-200">{selectedConversation.fullname}</span>
           </div>
 
           <Messages />
