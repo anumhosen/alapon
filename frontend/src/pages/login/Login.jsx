@@ -13,11 +13,12 @@ const Login = () => {
     await login(username, password);
   };
   return (
-    <div className="flex flex-col items-center justify-center sm:min-w-96 max-w-96 mx-auto">
-      <div className="w-full p-6 mt-[20%] rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
-        <h1 className="text-3xl font-semibold text-center text-gray-300">
+    <div className="flex flex-col items-center justify-center sm:min-w-96 max-w-96 w-full mx-auto">
+      <div className="flex-1 w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+        <h1 className="flex items-center justify-center text-2xl font-semibold text-center text-gray-300">
           Login
-          <span className="text-blue-500"> ChatApp</span>
+          <img src="/favicon.png" alt="App icon" className="w-8 inline-block mx-2" />
+          <span className="text-blue-500">Alapon</span>
         </h1>
 
         <form onSubmit={handleSubmit}>
@@ -51,6 +52,7 @@ const Login = () => {
           >
             {"Don't"} have an account?
           </Link>
+
           <div>
             <button className="btn btn-block btn-sm mt-2" disabled={loading}>
               {loading ? <span className="loading loading-spinner"></span> : "Login"}
